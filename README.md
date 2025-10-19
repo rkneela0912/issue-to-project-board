@@ -7,42 +7,22 @@ Automatically add issues and PRs to GitHub Project boards
 ## Quick Start
 
 ```yaml
-name: Issue to Project Board
+name: Add to Project
 on:
+  issues:
+    types: [opened]
   pull_request:
-    types: [opened, synchronize]
+    types: [opened]
 
 jobs:
-  run:
+  add:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      issues: write
     steps:
       - uses: rkneela0912/issue-to-project-board@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## Features
-
-- Automated GitHub Actions workflow
-- Easy to configure
-- Production-ready
-- MIT licensed
-
-## Inputs
-
-| Input | Description | Required |
-|-------|-------------|----------|
-| `github_token` | GitHub token for API access | ✅ Yes |
-
 ## License
 
 [MIT License](LICENSE)
-
-## Support
-
-⭐ Star this repo if you find it helpful!
-
-For issues, [open an issue](https://github.com/rkneela0912/issue-to-project-board/issues).

@@ -1,0 +1,31 @@
+name: 'Issue to Project Board'
+description: 'Automatically add issues and PRs to GitHub Project boards based on labels or keywords'
+author: 'rkneela0912'
+
+inputs:
+  github_token:
+    description: 'GitHub token with project permissions'
+    required: true
+  project_number:
+    description: 'Project number (from project URL)'
+    required: true
+  label_mappings:
+    description: 'JSON mapping of labels to project status (e.g., {"bug":"Todo","feature":"Backlog"})'
+    required: false
+  default_status:
+    description: 'Default status column for new items'
+    default: 'Todo'
+    required: false
+
+outputs:
+  added:
+    description: 'Whether the item was added to the project'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'trello'
+  color: 'blue'
+

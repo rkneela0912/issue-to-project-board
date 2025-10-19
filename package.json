@@ -1,0 +1,20 @@
+{
+  "name": "issue-to-project-board",
+  "version": "1.0.0",
+  "description": "Automatically add issues to GitHub Project boards based on labels and keywords",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist --source-map --license licenses.txt"
+  },
+  "keywords": ["github-action", "project-management", "automation", "github-projects"],
+  "author": "rkneela0912",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
+  }
+}
+
